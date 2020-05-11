@@ -1,0 +1,96 @@
+﻿@model ASP.NET_Core_BookStore.Models.Book
+
+@{
+    ViewData["Title"] = "CreateBook";
+}
+
+<center><h4>Добавление новой книги</h4></center>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="CreateBook">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Desc" class="control-label"></label>
+                    <input asp-for="Desc" class="form-control" />
+                    <span asp-validation-for="Desc" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Author" class="control-label"></label>
+                    <input asp-for="Author" class="form-control" />
+                    <span asp-validation-for="Author" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Img" class="control-label"></label>
+                    <input asp-for="Img" class="form-control" />
+                    <span asp-validation-for="Img" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Price" class="control-label"></label>
+                    <input asp-for="Price" class="form-control" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PublishHouse" class="control-label"></label>
+                    <input asp-for="PublishHouse" class="form-control" />
+                    <span asp-validation-for="PublishHouse" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Year" class="control-label"></label>
+                    <input asp-for="Year" class="form-control" />
+                    <span asp-validation-for="Year" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Pages" class="control-label"></label>
+                    <input asp-for="Pages" class="form-control" />
+                    <span asp-validation-for="Pages" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ISBN" class="control-label"></label>
+                    <input asp-for="ISBN" class="form-control" />
+                    <span asp-validation-for="ISBN" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CodeBook" class="control-label"></label>
+                    <input asp-for="CodeBook" class="form-control" />
+                    <span asp-validation-for="CodeBook" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CountInStock" class="control-label"></label>
+                    <input asp-for="CountInStock" class="form-control" />
+                    <span asp-validation-for="CountInStock" class="text-danger"></span>
+                </div>
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="IsFavorite" /> @Html.DisplayNameFor(model => model.IsFavorite)
+                    </label>
+                </div>
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="InBasket" /> @Html.DisplayNameFor(model => model.InBasket)
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CategoryId" class="control-label"></label>
+                    <input asp-for="CategoryId" class="form-control" />
+                    <span asp-validation-for="CategoryId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Добавить" class="btn btn-success" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a class="btn btn-dark" asp-action="AdminPanel">Назад</a>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

@@ -1,0 +1,78 @@
+﻿@model IEnumerable<ASP.NET_Core_BookStore.Models.Book>
+
+@{
+    ViewData["Title"] = "AdminPanel";
+}
+
+<center><h4>Панель администратора</h4></center>
+
+    <p>
+        <a class="btn btn-dark" asp-action="CreateBook">Добавить</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Author)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CodeBook)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CountInStock)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsFavorite)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Category.Name)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Author)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CodeBook)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CountInStock)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsFavorite)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category.Name)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Изменить", "EditBook", new { id = item.Id }, new { @class = "btn btn-dark"})<br/><br />
+                        @Html.ActionLink("Подробнее", "DetailsBook", new { id = item.Id }, new { @class = "btn btn-dark" })<br /><br />
+                        @Html.ActionLink("Удалить", "DeleteBook", new { id = item.Id }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
