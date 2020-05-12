@@ -1,0 +1,56 @@
+﻿@model ASP.NET_Core_BookStore.Models.Book
+
+@{
+    ViewData["Title"] = "DetailsBook";
+}
+
+@{
+    string InStock = "";
+    string color = "";
+    if (Model.CountInStock >= 3)
+    {
+        InStock = "Есть в наличии";
+        color = "green";
+    }
+    if (Model.CountInStock < 3 && Model.CountInStock > 0)
+    {
+        InStock = "Товар заканчивается";
+        color = "orange";
+    }
+    if (Model.CountInStock == 0)
+    {
+        InStock = "Нет в наличии";
+        color = "red";
+    }
+}
+
+
+<h3 class="card-title">@Model.Name</h3>
+<div class="row row-cols-1 row-cols-md-3">
+    <div class="col mb-4">
+        <img style="width: 22rem;" src="@Model.Img" class="card-img-top" alt="...">
+    </div>
+    <div class="col mb-4">
+        <p style="font-size:2em;"><strong>@Model.Price грн.</strong></p>
+        <p style="font-size:1.1em; color:@color"><i><strong>@InStock</strong></i></p>
+        <p style="font-size:1.1em;">Артикул:&nbsp;<i><strong>@Model.CodeBook</strong></i></p>
+        <a class="btn btn-lg btn-danger" asp-controller="Books" asp-action="DetailsBook" asp-route-id="@Model.Id">
+            <svg class="bi bi-bucket" width="1.3em" height="1.3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 1.5A4.5 4.5 0 003.5 6h-1a5.5 5.5 0 1111 0h-1A4.5 4.5 0 008 1.5z" clip-rule="evenodd" />
+                <path fill-rule="evenodd" d="M1.61 5.687A.5.5 0 012 5.5h12a.5.5 0 01.488.608l-1.826 8.217a1.5 1.5 0 01-1.464 1.175H4.802a1.5 1.5 0 01-1.464-1.175L1.512 6.108a.5.5 0 01.098-.42zm1.013.813l1.691 7.608a.5.5 0 00.488.392h6.396a.5.5 0 00.488-.392l1.69-7.608H2.624z" clip-rule="evenodd" />
+            </svg>
+            В корзину
+        </a>
+        <br /><br />
+        <p style="font-size:1.1em;">ISBN:&nbsp;<i>@Model.ISBN</i></p>
+        <p style="font-size:1.1em;">Автор:&nbsp;<i>@Model.Author</i></p>
+        <p style="font-size:1.1em;">Издательство:&nbsp;<i>@Model.PublishHouse</i></p>
+        <p style="font-size:1.1em;">Год:&nbsp;<i>@Model.Year</i></p>
+        <p style="font-size:1.1em;">Страниц:&nbsp;<i>@Model.Pages</i></p>
+        <p style="font-size:1.1em;">Категория:&nbsp;<i>@Model.Category.Name</i></p>
+    </div>
+    <div class="col mb-4">
+    </div>
+</div>
+
+

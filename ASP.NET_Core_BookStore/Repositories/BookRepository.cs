@@ -24,7 +24,8 @@ namespace ASP.NET_Core_BookStore.Repositories
 
         public Book Get(int? id)
         {
-            var book = db.Books.Find(id);
+            var books = db.Books.Include(m => m.Category).ToList();
+            var book = books.FirstOrDefault(item => item.Id == id);
             return book;
         }
 

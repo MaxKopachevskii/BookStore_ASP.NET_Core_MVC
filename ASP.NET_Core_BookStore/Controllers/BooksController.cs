@@ -10,12 +10,12 @@ using ASP.NET_Core_BookStore.Interfaces;
 
 namespace ASP.NET_Core_BookStore.Controllers
 {
-    public class HomeController : Controller
+    public class BooksController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<BooksController> _logger;
         IUnitOfWork unitOfWork;
 
-        public HomeController(ILogger<HomeController> logger,IUnitOfWork context)
+        public BooksController(ILogger<BooksController> logger,IUnitOfWork context)
         {
             _logger = logger;
             unitOfWork = context;
@@ -24,6 +24,12 @@ namespace ASP.NET_Core_BookStore.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+
+        public IActionResult AllBooks()
+        {
+            var books = unitOfWork.Books.GetAll();
+            return View(books);
         }
 
         public IActionResult AdminPanel()
