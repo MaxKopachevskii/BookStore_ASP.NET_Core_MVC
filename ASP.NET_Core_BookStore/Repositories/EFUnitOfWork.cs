@@ -18,7 +18,7 @@ namespace ASP.NET_Core_BookStore.Repositories
             db = context;
         }
 
-        public IRepository<Book> Books
+        public BookRepository Books
         {
             get
             {
@@ -28,7 +28,7 @@ namespace ASP.NET_Core_BookStore.Repositories
             }
         }
 
-        public IRepository<Category> Categories
+        public CategoryRepository Categories
         {
             get
             {
@@ -38,7 +38,7 @@ namespace ASP.NET_Core_BookStore.Repositories
             }
         }
 
-        public IRepository<Order> Orders
+        public OrderRepository Orders
         {
             get
             {

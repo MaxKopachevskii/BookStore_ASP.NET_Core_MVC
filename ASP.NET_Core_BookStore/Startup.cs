@@ -15,6 +15,7 @@ using Microsoft.Extensions.Hosting;
 using ASP.NET_Core_BookStore.Models;
 using ASP.NET_Core_BookStore.Interfaces;
 using ASP.NET_Core_BookStore.Repositories;
+using ASP.NET_Core_BookStore.Controllers;
 
 namespace ASP.NET_Core_BookStore
 {

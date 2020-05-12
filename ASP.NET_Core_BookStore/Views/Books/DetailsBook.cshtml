@@ -25,7 +25,8 @@
 }
 
 
-<h3 class="card-title">@Model.Name</h3>
+<h3>@Model.Name</h3>
+<br />
 <div class="row row-cols-1 row-cols-md-3">
     <div class="col mb-4">
         <img style="width: 22rem;" src="@Model.Img" class="card-img-top" alt="...">
@@ -34,7 +35,7 @@
         <p style="font-size:2em;"><strong>@Model.Price грн.</strong></p>
         <p style="font-size:1.1em; color:@color"><i><strong>@InStock</strong></i></p>
         <p style="font-size:1.1em;">Артикул:&nbsp;<i><strong>@Model.CodeBook</strong></i></p>
-        <a class="btn btn-lg btn-danger" asp-controller="Books" asp-action="DetailsBook" asp-route-id="@Model.Id">
+        <a class="btn btn-lg btn-danger" asp-controller="Books" asp-action="BookInBasket" asp-route-id="@Model.Id">
             <svg class="bi bi-bucket" width="1.3em" height="1.3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" d="M8 1.5A4.5 4.5 0 003.5 6h-1a5.5 5.5 0 1111 0h-1A4.5 4.5 0 008 1.5z" clip-rule="evenodd" />
                 <path fill-rule="evenodd" d="M1.61 5.687A.5.5 0 012 5.5h12a.5.5 0 01.488.608l-1.826 8.217a1.5 1.5 0 01-1.464 1.175H4.802a1.5 1.5 0 01-1.464-1.175L1.512 6.108a.5.5 0 01.098-.42zm1.013.813l1.691 7.608a.5.5 0 00.488.392h6.396a.5.5 0 00.488-.392l1.69-7.608H2.624z" clip-rule="evenodd" />
@@ -50,6 +51,34 @@
         <p style="font-size:1.1em;">Категория:&nbsp;<i>@Model.Category.Name</i></p>
     </div>
     <div class="col mb-4">
+    </div>
+</div>
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+        <a style="font-size:1.1em; color:black;" class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">О книге</a>
+    </li>
+    <li class="nav-item">
+        <a style="font-size:1.1em; color:black;" class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">О нас</a>
+    </li>
+    <li class="nav-item">
+        <a style="font-size:1.1em; color:black;" class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Контакты</a>
+    </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+    <div style="font-size:1.1em;" class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Model.Desc</div>
+    <div style="font-size:1.1em;" class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Интернет – магазин книг – это очень удобный сервис для тех, кто не мыслит своей жизни без чтения. На нашем сайте «BookStore», Вы можете купить книги по низким ценам, которые принадлежат самым разным жанрам – мир программирования, психология, художественая литература и так далее, - и совершенно не важно, живете Вы в Киеве, или же в любом другом уголке Украины, покупки может совершать любой человек! Нельзя не отметить, что еще совсем недавно, большинство людей сталкивались с проблемой – где приобрести необходимую книгу. Особенно, это вопрос был актуален для людей, которые проживали в небольших городах, где выбор книг был невелик. Но, сегодня, данная проблема ушла в прошлое, благодаря интернет – магазинам книг, у жителей любого населенного пункта, есть возможность покупать самые редкие экземпляры книг, по самым приемлемым ценам. Для того, что бы купить книгу онлайн, нужно выделить всего несколько минут. Для этого, Вам нужно просто остановить свой выбор на необходимой книге, и составить заказ, и через минимальное количество времени, курьер Вам ее доставит. Как видите, преимущества таких покупок очевидны – экономия Ваших сил и времени на поиски необходимой литературы. Купить книгу в нашем интернет магазине - это сделать разумный выбор! «BookStore» дарит возможность купить самые разные виды литературы. Кроме этого, у Вас есть возможность заказывать доставку книг под заказ. Мы можем доставить Вам книги, не только те, что есть в нашем ассортименте, а еще и очень редкие издания. К тому же, все книги, которые Вы можете у нас приобрести, отличаются вполне приемлемыми ценами. Как видите, покупать книги онлайн – это очень быстро и очень удобно. С нашим интернет – магазином Вы станете обладателем самых разных изданий!</div>
+    <div style="font-size:1.1em;" class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"><br />
+       <pre style="font-size:1.1em;">
+Время работы:
+Понедельник - Пятница : с 9-00 до 18-00
+Суббота : 10-00 - 16-00
+Воскресенье - Выходной
+
+- (066) 500-30-10
+- (096) 001-23-23
+- e-mail:bookstore@gmail.com
+       </pre>
     </div>
 </div>
 

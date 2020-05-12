@@ -13,12 +13,13 @@ namespace ASP.NET_Core_BookStore.Controllers
     public class BooksController : Controller
     {
         private readonly ILogger<BooksController> _logger;
-        IUnitOfWork unitOfWork;
+        static IUnitOfWork unitOfWork;
 
         public BooksController(ILogger<BooksController> logger,IUnitOfWork context)
         {
             _logger = logger;
             unitOfWork = context;
+            //CleanBasket();
         }
 
         public IActionResult Index()
@@ -32,10 +33,50 @@ namespace ASP.NET_Core_BookStore.Controllers
             return View(books);
         }
 
+        public IActionResult Basket()
+        {
+            var books = unitOfWork.Books.GetAllInBasket();
+            return View(books);
+        }
+
         public IActionResult AdminPanel()
         {
             var books = unitOfWork.Books.GetAll();
             return View(books);
+        }
+
+        public IActionResult BookInBasket(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var book = unitOfWork.Books.Get(id);
+            if (book != null)
+            {
+                book.InBasket = true;
+                unitOfWork.Books.Update(book);
+                unitOfWork.Save();
+                return RedirectToAction("DetailsBook", new { id = id});
+            }
+            return NotFound();
+        }
+
+        public IActionResult BookOutBasket(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var book = unitOfWork.Books.Get(id);
+            if (book != null)
+            {
+                book.InBasket = false;
+                unitOfWork.Books.Update(book);
+                unitOfWork.Save();
+                return RedirectToAction("Basket");
+            }
+            return NotFound();
         }
 
         [HttpGet]
@@ -104,6 +145,20 @@ namespace ASP.NET_Core_BookStore.Controllers
             return RedirectToAction("AdminPanel");
         }
 
+        public static void CleanBasket()
+        {
+            var books = unitOfWork.Books.GetAll();
+            foreach (var item in books)
+            {
+                if (item.InBasket == true)
+                {
+                    item.InBasket = false;
+                    unitOfWork.Books.Update(item);
+                    unitOfWork.Save();
+                }
+            }
+        }
+        
         public IActionResult Privacy()
         {
             return View();

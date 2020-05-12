@@ -1,4 +1,5 @@
 ﻿using ASP.NET_Core_BookStore.Models;
+using ASP.NET_Core_BookStore.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,9 @@ namespace ASP.NET_Core_BookStore.Interfaces
 {
     public interface IUnitOfWork : IDisposable
     {
-        IRepository<Book> Books { get; }
-        IRepository<Category> Categories { get; }
-        IRepository<Order> Orders { get; }
+        BookRepository Books { get; }
+        CategoryRepository Categories { get; }
+        OrderRepository Orders { get; }
         void Save();
     }
 }

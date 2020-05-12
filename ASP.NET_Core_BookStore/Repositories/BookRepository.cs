@@ -22,6 +22,11 @@ namespace ASP.NET_Core_BookStore.Repositories
             return db.Books.Include(m => m.Category).ToList();
         }
 
+        public IEnumerable<Book> GetAllInBasket()
+        {
+            return db.Books.Include(m => m.Category).Where(item => item.InBasket == true).ToList();
+        }
+
         public Book Get(int? id)
         {
             var books = db.Books.Include(m => m.Category).ToList();
