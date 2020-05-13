@@ -1,5 +1,6 @@
 ﻿using ASP.NET_Core_BookStore.Interfaces;
 using ASP.NET_Core_BookStore.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,12 +18,13 @@ namespace ASP.NET_Core_BookStore.Repositories
 
         public IEnumerable<Order> GetAll()
         {
-            return db.Orders.ToList();
+            return db.Orders.Include(m => m.OrderBooks).ToList();
         }
 
         public Order Get(int? id)
         {
-            var order = db.Orders.Find(id);
+            var orders = db.Orders.Include(m => m.OrderBooks).ToList();
+            var order = orders.FirstOrDefault(item => item.Id == id);
             return order;
         }
 

@@ -20,6 +20,12 @@ namespace ASP.NET_Core_BookStore.Controllers
             return View();
         }
 
+        public IActionResult GetAllOrders()
+        {
+            var orders = unitOfWork.Orders.GetAll();
+            return View(orders);
+        }
+
         [HttpGet]
         public IActionResult CreateOrderForm()
         {
@@ -31,18 +37,48 @@ namespace ASP.NET_Core_BookStore.Controllers
         {
             if (ModelState.IsValid)
             {
+                order.OrderBooks = unitOfWork.Books.GetAllInBasket();
                 unitOfWork.Orders.Create(order);
                 unitOfWork.Save();
-                return RedirectToAction("AllBooks");
+                CleanBasket();
+                return RedirectToAction("AllBooks", "Books");
             }
             return View();
         }
 
-        public IActionResult GetAllOrders()
+        public IActionResult DetailsOrder(int? id)
         {
-            var orders = unitOfWork.Orders.GetAll();
-            return View(orders);
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var order = unitOfWork.Orders.Get(id);
+            if (order != null)
+            {
+                return View(order);
+            }
+            return NotFound();
         }
 
+        public IActionResult DeleteOrder(int id)
+        {
+            unitOfWork.Orders.Delete(id);
+            unitOfWork.Save();
+            return RedirectToAction("AdminPanel","Books");
+        }
+
+        public void CleanBasket()
+        {
+            var books = unitOfWork.Books.GetAll();
+            foreach (var item in books)
+            {
+                if (item.InBasket == true)
+                {
+                    item.InBasket = false;
+                    unitOfWork.Books.Update(item);
+                    unitOfWork.Save();
+                }
+            }
+        }
     }
 }

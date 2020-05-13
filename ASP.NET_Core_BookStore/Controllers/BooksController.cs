@@ -15,7 +15,7 @@ namespace ASP.NET_Core_BookStore.Controllers
         private readonly ILogger<BooksController> _logger;
         IUnitOfWork unitOfWork;
 
-        public BooksController(ILogger<BooksController> logger,IUnitOfWork context)
+        public BooksController(ILogger<BooksController> logger, IUnitOfWork context)
         {
             _logger = logger;
             unitOfWork = context;

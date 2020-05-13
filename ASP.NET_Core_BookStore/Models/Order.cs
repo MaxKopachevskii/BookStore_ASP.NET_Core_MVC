@@ -31,14 +31,10 @@ namespace ASP.NET_Core_BookStore.Models
         [Display(Name = "Дата заказа")]
         public DateTime Date { get; set; }
 
-        [Display(Name = "Артикул заказаного товара")]
-        public int CodeBook { get; set; }
-
-        [Display(Name = "ID заказаной книги")]
-        public int? BookId { get; set; }
-        public Book Book { get; set; }
+        public IEnumerable<Book> OrderBooks { get; set; }
         public Order()
         {
+            OrderBooks = new List<Book>();
             Date = DateTime.Now;
         }
     }

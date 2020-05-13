@@ -36,7 +36,7 @@ namespace ASP.NET_Core_BookStore
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            string connection = Configuration.GetConnectionString("BookStoreConnection");
+            string connection = Configuration.GetConnectionString("BookStoreDbConnection");
             services.AddDbContext<BookStoreDbContext>(options => options.UseSqlServer(connection));
             services.AddControllersWithViews();
             services.AddRazorPages();

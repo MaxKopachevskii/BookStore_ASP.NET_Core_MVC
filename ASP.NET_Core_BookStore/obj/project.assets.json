@@ -8515,11 +8515,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\ASP.NET_Core_BookStore\\ASP.NET_Core_BookStore\\ASP.NET_Core_BookStore.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\BookStore_ASP.NET_Core_MVC\\ASP.NET_Core_BookStore\\ASP.NET_Core_BookStore.csproj",
       "projectName": "ASP.NET_Core_BookStore",
-      "projectPath": "C:\\Users\\Admin\\source\\repos\\ASP.NET_Core_BookStore\\ASP.NET_Core_BookStore\\ASP.NET_Core_BookStore.csproj",
+      "projectPath": "C:\\Users\\Admin\\source\\repos\\BookStore_ASP.NET_Core_MVC\\ASP.NET_Core_BookStore\\ASP.NET_Core_BookStore.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\source\\repos\\ASP.NET_Core_BookStore\\ASP.NET_Core_BookStore\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\source\\repos\\BookStore_ASP.NET_Core_MVC\\ASP.NET_Core_BookStore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -4,11 +4,8 @@
     ViewData["Title"] = "GetAllOrders";
 }
 
-<h1>GetAllOrders</h1>
+<center><h4>Список заказов</h4></center>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -31,16 +28,7 @@
                 @Html.DisplayNameFor(model => model.Post)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Comment)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CodeBook)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BookId)
             </th>
             <th></th>
         </tr>
@@ -67,21 +55,11 @@
                 @Html.DisplayFor(modelItem => item.Post)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Comment)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CodeBook)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BookId)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Подробнее", "DetailsOrder", new { id = item.Id }, new { @class = "btn btn-dark" })<br /> <br />
+                @Html.ActionLink("Удалить", "DeleteOrder", new { id = item.Id }, new { @class = "btn btn-warning" })
             </td>
         </tr>
 }
