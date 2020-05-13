@@ -13,18 +13,18 @@ namespace ASP.NET_Core_BookStore.Controllers
     public class BooksController : Controller
     {
         private readonly ILogger<BooksController> _logger;
-        static IUnitOfWork unitOfWork;
+        IUnitOfWork unitOfWork;
 
         public BooksController(ILogger<BooksController> logger,IUnitOfWork context)
         {
             _logger = logger;
             unitOfWork = context;
-            //CleanBasket();
         }
 
         public IActionResult Index()
         {
-            return View();
+            CleanBasket();
+            return RedirectToAction("AllBooks");
         }
 
         public IActionResult AllBooks()
@@ -145,7 +145,7 @@ namespace ASP.NET_Core_BookStore.Controllers
             return RedirectToAction("AdminPanel");
         }
 
-        public static void CleanBasket()
+        public void CleanBasket()
         {
             var books = unitOfWork.Books.GetAll();
             foreach (var item in books)
@@ -158,7 +158,7 @@ namespace ASP.NET_Core_BookStore.Controllers
                 }
             }
         }
-        
+
         public IActionResult Privacy()
         {
             return View();

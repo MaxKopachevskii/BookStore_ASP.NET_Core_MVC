@@ -160,3 +160,5 @@ C:\Users\Admin\source\repos\ASP.NET_Core_BookStore\ASP.NET_Core_BookStore\obj\De
 C:\Users\Admin\source\repos\ASP.NET_Core_BookStore\ASP.NET_Core_BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Books\Privacy.cshtml.g.cs
 C:\Users\Admin\source\repos\ASP.NET_Core_BookStore\ASP.NET_Core_BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Books\AllBooks.cshtml.g.cs
 C:\Users\Admin\source\repos\ASP.NET_Core_BookStore\ASP.NET_Core_BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Books\Basket.cshtml.g.cs
+C:\Users\Admin\source\repos\ASP.NET_Core_BookStore\ASP.NET_Core_BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Orders\CreateOrderForm.cshtml.g.cs
+C:\Users\Admin\source\repos\ASP.NET_Core_BookStore\ASP.NET_Core_BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Orders\GetAllOrders.cshtml.g.cs

@@ -6,9 +6,10 @@
 
 <center><h4>Панель администратора</h4></center>
 
-    <p>
-        <a class="btn btn-dark" asp-action="CreateBook">Добавить</a>
-    </p>
+<p>
+    <a class="btn btn-dark" asp-action="CreateBook">Добавить</a>
+    <a class="btn btn-danger" asp-controller="Orders" asp-action="GetAllOrders">Посмотреть все заказы</a>
+</p>
     <table class="table">
         <thead>
             <tr>
