@@ -9,9 +9,12 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Books" asp-action="Index">BookStore</a>
+                <a style="font-family:'Comic Sans MS';" class="navbar-brand" asp-area="" asp-controller="Books" asp-action="">
+                    @*<img src="~/images/logo8.jpg" height="75", width="75"/>*@
+                    BookStore
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -20,16 +23,25 @@
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Books" asp-action="Index">Home</a>
+                            <a style="font-size:1em; font-family:'Comic Sans MS';" class="nav-link text-light" asp-area="" asp-controller="Books" asp-action="">Главная</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Books" asp-action="AllBooks">AllBooks</a>
+                            <a style="font-size:1em; font-family:'Comic Sans MS';" class="nav-link text-light" asp-area="" asp-controller="Books" asp-action="AllBooks">Все товары</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Books" asp-action="Privacy">Privacy</a>
+                            <a style="font-size:1em; font-family:'Comic Sans MS';" class="nav-link text-light" asp-area="" asp-controller="Books" asp-action="AllProgrammingBooks">Мир программирования</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Books" asp-action="AdminPanel">AdminPanel</a>
+                            <a style="font-size:1em; font-family:'Comic Sans MS';" class="nav-link text-light" asp-area="" asp-controller="Books" asp-action="AllPsyhologyBooks">Психология</a>
+                        </li>
+                        <li class="nav-item">
+                            <a style="font-size:1em; font-family:'Comic Sans MS';" class="nav-link text-light" asp-area="" asp-controller="Books" asp-action="AllLiteratureBooks">Литература</a>
+                        </li>
+                        <li class="nav-item">
+                            <a style="font-size:1em; font-family:'Comic Sans MS';" class="nav-link text-light" asp-area="" asp-controller="Books" asp-action="Privacy">О нас</a>
+                        </li>
+                        <li class="nav-item">
+                            <a style="font-size:1em; font-family:'Comic Sans MS';" class="nav-link text-light" asp-area="" asp-controller="Books" asp-action="AdminPanel">Панель админа</a>
                         </li>
                     </ul>
                 </div>

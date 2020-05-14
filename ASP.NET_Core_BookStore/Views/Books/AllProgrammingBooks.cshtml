@@ -1,16 +1,16 @@
 ﻿@model IEnumerable<ASP.NET_Core_BookStore.Models.Book>
 
 @{
-    ViewData["Title"] = "Все товары";
+    ViewData["Title"] = "Мир программирования";
 }
 
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Главная</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Все товары</li>
-        </ol>
-    </nav>
-@*<center><h3>Все товары</h3></center>*@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Главная</a></li>
+        <li class="breadcrumb-item"><a href="#">Все товары</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Мир программирования</li>
+    </ol>
+</nav>
 <br />
 <div class="row">
     @foreach (var item in Model)
@@ -27,4 +27,3 @@
         </div>
     }
 </div>
-

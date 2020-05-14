@@ -4,65 +4,22 @@
     ViewData["Title"] = "DetailsOrder";
 }
 <br />
-<div>
-    <center><h4>Заказ №@Model.Id</h4></center>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Id)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FullName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FullName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PhoneNumber)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.City)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.City)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Post)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Post)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Comment)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Comment)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Date)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Date)
-        </dd>
-    </dl>
-</div>
-
+<center><h4>Заказ №@Model.Id</h4></center>
+<hr />
+<p><strong>Номер заказа:</strong>&nbsp;@Model.Id</p>
+<p><strong>ФИО:</strong>&nbsp;@Model.FullName</p>
+<p><strong>Номер телефона:</strong>&nbsp;@Model.PhoneNumber</p>
+<p><strong>Email:</strong>&nbsp;@Model.Email</p>
+<p><strong>Город:</strong>&nbsp;@Model.City</p>
+<p><strong>Номер отдиления Новой Почты:</strong>&nbsp;@Model.Post</p>
+<p><strong>Комментарий к заказу:</strong>&nbsp;@Model.Comment</p>
+<p><strong>Дата заказа:</strong>&nbsp;@Model.Date</p>
+<p><strong>Заказаные товары:</strong>&nbsp;</p>
 @foreach (var item in Model.OrderBooks)
 {
-    <p>@item.Name</p>
+   <p>&nbsp;&nbsp;&nbsp;@item.Name,&nbsp;&nbsp;&nbsp;Артикул:&nbsp;@item.CodeBook</p>
 }
+    
 <div>
-    <a class="btn btn-dark" asp-controller="Books" asp-action="AdminPanel">Назад</a>
+    <a class="btn btn-dark" asp-controller="Orders" asp-action="GetAllOrders">Назад</a>
 </div>

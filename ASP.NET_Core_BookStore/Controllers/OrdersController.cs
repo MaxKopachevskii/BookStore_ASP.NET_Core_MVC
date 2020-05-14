@@ -40,6 +40,7 @@ namespace ASP.NET_Core_BookStore.Controllers
                 order.OrderBooks = unitOfWork.Books.GetAllInBasket();
                 unitOfWork.Orders.Create(order);
                 unitOfWork.Save();
+                Sales();
                 CleanBasket();
                 return RedirectToAction("AllBooks", "Books");
             }
@@ -80,5 +81,20 @@ namespace ASP.NET_Core_BookStore.Controllers
                 }
             }
         }
+
+        public void Sales()
+        {
+            var books = unitOfWork.Books.GetAll();
+            foreach (var item in books)
+            {
+                if (item.InBasket == true)
+                {
+                    item.CountInStock--;
+                    unitOfWork.Books.Update(item);
+                    unitOfWork.Save();
+                }
+            }
+        }
+
     }
 }

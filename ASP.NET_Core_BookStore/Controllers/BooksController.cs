@@ -33,6 +33,24 @@ namespace ASP.NET_Core_BookStore.Controllers
             return View(books);
         }
 
+        public IActionResult AllProgrammingBooks()
+        {
+            var books = unitOfWork.Books.GetAllProgrammingBooks();
+            return View(books);
+        }
+
+        public IActionResult AllPsyhologyBooks()
+        {
+            var books = unitOfWork.Books.GetAllPsyhologyBooks();
+            return View(books);
+        }
+
+        public IActionResult AllLiteratureBooks()
+        {
+            var books = unitOfWork.Books.GetAllLiteratureBooks();
+            return View(books);
+        }
+
         public IActionResult Basket()
         {
             var books = unitOfWork.Books.GetAllInBasket();

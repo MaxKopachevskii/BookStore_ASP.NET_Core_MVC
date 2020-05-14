@@ -8,6 +8,7 @@ namespace ASP.NET_Core_BookStore.Models
 {
     public class Order
     {
+        [Display(Name = "Номер заказа")]
         public int Id { get; set; }
 
         [Display(Name = "ФИО")]
@@ -22,7 +23,7 @@ namespace ASP.NET_Core_BookStore.Models
         [Display(Name = "Город")]
         public string City { get; set; }
 
-        [Display(Name = "Отдиление новой почты")]
+        [Display(Name = "Отделение новой почты")]
         public int Post { get; set; }
 
         [Display(Name = "Комментарий к заказу")]
