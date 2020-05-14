@@ -10,8 +10,8 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
-            <div class="container">
-                <a style="font-family:'Comic Sans MS';" class="navbar-brand" asp-area="" asp-controller="Books" asp-action="">
+            <div class="container-fluid" style="margin-left:50px;margin-right:50px;">
+                <a style="font-family:'Comic Sans MS';" class="navbar-brand" asp-area="AllFavoriteBooks" asp-controller="Books" asp-action="">
                     @*<img src="~/images/logo8.jpg" height="75", width="75"/>*@
                     BookStore
                 </a>
@@ -23,7 +23,7 @@
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a style="font-size:1em; font-family:'Comic Sans MS';" class="nav-link text-light" asp-area="" asp-controller="Books" asp-action="">Главная</a>
+                            <a style="font-size:1em; font-family:'Comic Sans MS';" class="nav-link text-light" asp-area="" asp-controller="Books" asp-action="AllFavoriteBooks">Главная</a>
                         </li>
                         <li class="nav-item">
                             <a style="font-size:1em; font-family:'Comic Sans MS';" class="nav-link text-light" asp-area="" asp-controller="Books" asp-action="AllBooks">Все товары</a>
@@ -48,7 +48,7 @@
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="container-fluid" style="width:90%; margin-left:5%; margin-right:5%;">
         <main role="main" class="pb-3">
             <a style="float:right" class="btn btn-lg btn-warning" asp-controller="Books" asp-action="Basket">
                 <svg class="bi bi-bucket" width="1.3em" height="1.3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -62,7 +62,7 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
+        <div class="container-fluid" style="width:90%; margin-left:5%; margin-right:5%;">
             &copy; 2020 - BookStore - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>

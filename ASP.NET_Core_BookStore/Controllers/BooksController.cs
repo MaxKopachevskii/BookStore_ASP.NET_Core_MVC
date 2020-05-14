@@ -24,7 +24,7 @@ namespace ASP.NET_Core_BookStore.Controllers
         public IActionResult Index()
         {
             CleanBasket();
-            return RedirectToAction("AllBooks");
+            return RedirectToAction("AllFavoriteBooks");
         }
 
         public IActionResult AllBooks()
@@ -48,6 +48,12 @@ namespace ASP.NET_Core_BookStore.Controllers
         public IActionResult AllLiteratureBooks()
         {
             var books = unitOfWork.Books.GetAllLiteratureBooks();
+            return View(books);
+        }
+
+        public IActionResult AllFavoriteBooks()
+        {
+            var books = unitOfWork.Books.GetAllFavoriteBooks();
             return View(books);
         }
 

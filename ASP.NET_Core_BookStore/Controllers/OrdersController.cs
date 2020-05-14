@@ -42,8 +42,15 @@ namespace ASP.NET_Core_BookStore.Controllers
                 unitOfWork.Save();
                 Sales();
                 CleanBasket();
-                return RedirectToAction("AllBooks", "Books");
+                int _orderNumber = order.Id;
+                return RedirectToAction("ShowNumberOfOrder", new { orderNumber = _orderNumber});
             }
+            return View();
+        }
+
+        public IActionResult ShowNumberOfOrder(int orderNumber)
+        {
+            ViewBag.OrderNumber = orderNumber;
             return View();
         }
 

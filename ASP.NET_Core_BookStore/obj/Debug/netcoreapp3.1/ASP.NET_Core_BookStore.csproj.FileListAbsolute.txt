@@ -330,3 +330,5 @@ C:\Users\Admin\source\repos\BookStore_ASP.NET_Core_MVC\ASP.NET_Core_BookStore\ob
 C:\Users\Admin\source\repos\BookStore_ASP.NET_Core_MVC\ASP.NET_Core_BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Books\AllLiteratureBooks.cshtml.g.cs
 C:\Users\Admin\source\repos\BookStore_ASP.NET_Core_MVC\ASP.NET_Core_BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Books\AllProgrammingBooks.cshtml.g.cs
 C:\Users\Admin\source\repos\BookStore_ASP.NET_Core_MVC\ASP.NET_Core_BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Books\AllPsyhologyBooks.cshtml.g.cs
+C:\Users\Admin\source\repos\BookStore_ASP.NET_Core_MVC\ASP.NET_Core_BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Orders\ShowNumberOfOrder.cshtml.g.cs
+C:\Users\Admin\source\repos\BookStore_ASP.NET_Core_MVC\ASP.NET_Core_BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Books\AllFavoriteBooks.cshtml.g.cs
