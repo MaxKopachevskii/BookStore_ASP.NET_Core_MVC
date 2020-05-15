@@ -10,11 +10,11 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
-            <div class="container-fluid" style="margin-left:50px;margin-right:50px;">
-                <a style="font-family:'Comic Sans MS';" class="navbar-brand" asp-area="AllFavoriteBooks" asp-controller="Books" asp-action="">
+            <div class="container-fluid" style="width:85%; margin-left:7.5%; margin-right:7.5%;">
+                <a style="font-family:'Comic Sans MS'; font-size:2.3em;" class="navbar-brand" asp-area="AllFavoriteBooks" asp-controller="Books" asp-action="">
                     @*<img src="~/images/logo8.jpg" height="75", width="75"/>*@
-                    BookStore
-                </a>
+                    <span style="color:#ffd800">BookStore</span>
+</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -23,32 +23,36 @@
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a style="font-size:1em; font-family:'Comic Sans MS';" class="nav-link text-light" asp-area="" asp-controller="Books" asp-action="AllFavoriteBooks">Главная</a>
+                            <a style="font-size:1.2em; font-family: 'Comic Sans MS'; color:#f61111" class="nav-link" asp-area="" asp-controller="Books" asp-action="AllFavoriteBooks">Главная</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a style="font-size:1.2em; font-family: 'Comic Sans MS'; color:#ffd800" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Каталог
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" asp-area="" asp-controller="Books" asp-action="AllBooks">Все товары</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Books" asp-action="AllProgrammingBooks">Мир программирования</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Books" asp-action="AllPsyhologyBooks">Психология</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Books" asp-action="AllLiteratureBooks">Художественая литература</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:1em; font-family:'Comic Sans MS';" class="nav-link text-light" asp-area="" asp-controller="Books" asp-action="AllBooks">Все товары</a>
+                            <a style="font-size:1.2em; font-family: 'Comic Sans MS'; color:#f61111" class="nav-link" asp-area="" asp-controller="Books" asp-action="AllBooks">Все товары</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:1em; font-family:'Comic Sans MS';" class="nav-link text-light" asp-area="" asp-controller="Books" asp-action="AllProgrammingBooks">Мир программирования</a>
+                            <a style="font-size:1.2em; font-family: 'Comic Sans MS'; color:#ffd800" class="nav-link" asp-area="" asp-controller="Books" asp-action="Privacy">О нас</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-size:1em; font-family:'Comic Sans MS';" class="nav-link text-light" asp-area="" asp-controller="Books" asp-action="AllPsyhologyBooks">Психология</a>
-                        </li>
-                        <li class="nav-item">
-                            <a style="font-size:1em; font-family:'Comic Sans MS';" class="nav-link text-light" asp-area="" asp-controller="Books" asp-action="AllLiteratureBooks">Литература</a>
-                        </li>
-                        <li class="nav-item">
-                            <a style="font-size:1em; font-family:'Comic Sans MS';" class="nav-link text-light" asp-area="" asp-controller="Books" asp-action="Privacy">О нас</a>
-                        </li>
-                        <li class="nav-item">
-                            <a style="font-size:1em; font-family:'Comic Sans MS';" class="nav-link text-light" asp-area="" asp-controller="Books" asp-action="AdminPanel">Панель админа</a>
+                            <a style="font-size:1.2em; font-family: 'Comic Sans MS'; color:#f61111" class="nav-link" asp-area="" asp-controller="Books" asp-action="AdminPanel">Панель админа</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container-fluid" style="width:90%; margin-left:5%; margin-right:5%;">
+    <div class="container-fluid" style="width:85%; margin-left:7.5%; margin-right:7.5%;">
         <main role="main" class="pb-3">
             <a style="float:right" class="btn btn-lg btn-warning" asp-controller="Books" asp-action="Basket">
                 <svg class="bi bi-bucket" width="1.3em" height="1.3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -61,9 +65,9 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container-fluid" style="width:90%; margin-left:5%; margin-right:5%;">
-            &copy; 2020 - BookStore - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer class="border-top footer text-muted bg-dark">
+        <div class="container-fluid" style="width:85%; margin-left:7.5%; margin-right:7.5%;">
+            &copy; 2020 - BookStore - <a class="text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

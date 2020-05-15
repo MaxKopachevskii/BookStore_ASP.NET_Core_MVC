@@ -16,9 +16,9 @@ namespace ASP.NET_Core_BookStore.Repositories
             db = context;
         }
 
-        public IEnumerable<Order> GetAll()
+        public IQueryable<Order> GetAll()
         {
-            return db.Orders.Include(m => m.OrderBooks).ToList();
+            return db.Orders.Include(m => m.OrderBooks);
         }
 
         public Order Get(int? id)

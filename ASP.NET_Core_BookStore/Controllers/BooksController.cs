@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ASP.NET_Core_BookStore.Models;
 using ASP.NET_Core_BookStore.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace ASP.NET_Core_BookStore.Controllers
 {
@@ -27,34 +28,89 @@ namespace ASP.NET_Core_BookStore.Controllers
             return RedirectToAction("AllFavoriteBooks");
         }
 
-        public IActionResult AllBooks()
+        public async Task<IActionResult> AllBooks(int page = 1)
         {
-            var books = unitOfWork.Books.GetAll();
-            return View(books);
+            int pageSize = 12;   // количество элементов на странице
+
+            IQueryable<Book> source = unitOfWork.Books.GetAll();
+            var count = await source.CountAsync();
+            var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
+
+            PageViewModel pageViewModel = new PageViewModel(count, page, pageSize);
+            IndexViewModel viewModel = new IndexViewModel
+            {
+                PageViewModel = pageViewModel,
+                Books = items
+            };
+            return View(viewModel);
         }
 
-        public IActionResult AllProgrammingBooks()
+        public async Task<IActionResult> AllProgrammingBooks(int page = 1)
         {
-            var books = unitOfWork.Books.GetAllProgrammingBooks();
-            return View(books);
+            int pageSize = 6;   // количество элементов на странице
+
+            IQueryable<Book> source = unitOfWork.Books.GetAllProgrammingBooks();
+            var count = await source.CountAsync();
+            var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
+
+            PageViewModel pageViewModel = new PageViewModel(count, page, pageSize);
+            IndexViewModel viewModel = new IndexViewModel
+            {
+                PageViewModel = pageViewModel,
+                Books = items
+            };
+            return View(viewModel);
         }
 
-        public IActionResult AllPsyhologyBooks()
+        public async Task<IActionResult> AllPsyhologyBooks(int page = 1)
         {
-            var books = unitOfWork.Books.GetAllPsyhologyBooks();
-            return View(books);
+            int pageSize = 6;   // количество элементов на странице
+
+            IQueryable<Book> source = unitOfWork.Books.GetAllPsyhologyBooks();
+            var count = await source.CountAsync();
+            var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
+
+            PageViewModel pageViewModel = new PageViewModel(count, page, pageSize);
+            IndexViewModel viewModel = new IndexViewModel
+            {
+                PageViewModel = pageViewModel,
+                Books = items
+            };
+            return View(viewModel);
         }
 
-        public IActionResult AllLiteratureBooks()
+        public async Task<IActionResult> AllLiteratureBooks(int page = 1)
         {
-            var books = unitOfWork.Books.GetAllLiteratureBooks();
-            return View(books);
+            int pageSize = 6;   // количество элементов на странице
+
+            IQueryable<Book> source = unitOfWork.Books.GetAllLiteratureBooks();
+            var count = await source.CountAsync();
+            var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
+
+            PageViewModel pageViewModel = new PageViewModel(count, page, pageSize);
+            IndexViewModel viewModel = new IndexViewModel
+            {
+                PageViewModel = pageViewModel,
+                Books = items
+            };
+            return View(viewModel);
         }
 
-        public IActionResult AllFavoriteBooks()
+        public async Task<IActionResult> AllFavoriteBooks(int page = 1)
         {
-            var books = unitOfWork.Books.GetAllFavoriteBooks();
-            return View(books);
+            int pageSize = 6;   // количество элементов на странице
+
+            IQueryable<Book> source = unitOfWork.Books.GetAllFavoriteBooks();
+            var count = await source.CountAsync();
+            var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
+
+            PageViewModel pageViewModel = new PageViewModel(count, page, pageSize);
+            IndexViewModel viewModel = new IndexViewModel
+            {
+                PageViewModel = pageViewModel,
+                Books = items
+            };
+            return View(viewModel);
         }
 
         public IActionResult Basket()
@@ -193,5 +249,35 @@ namespace ASP.NET_Core_BookStore.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        //public IActionResult AllBooks()
+        //{
+        //    var books = unitOfWork.Books.GetAll();
+        //    return View(books);
+        //}
+
+        //public IActionResult AllProgrammingBooks()
+        //{
+        //    var books = unitOfWork.Books.GetAllProgrammingBooks();
+        //    return View(books);
+        //}
+
+        //public IActionResult AllPsyhologyBooks()
+        //{
+        //    var books = unitOfWork.Books.GetAllPsyhologyBooks();
+        //    return View(books);
+        //}
+
+        //public IActionResult AllLiteratureBooks()
+        //{
+        //    var books = unitOfWork.Books.GetAllLiteratureBooks();
+        //    return View(books);
+        //}
+
+        //public IActionResult AllFavoriteBooks()
+        //{
+        //    var books = unitOfWork.Books.GetAllFavoriteBooks();
+        //    return View(books);
+        //}
     }
 }

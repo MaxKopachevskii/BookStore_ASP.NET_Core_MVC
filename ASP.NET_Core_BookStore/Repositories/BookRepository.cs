@@ -17,24 +17,24 @@ namespace ASP.NET_Core_BookStore.Repositories
             db = context;
         }
 
-        public IEnumerable<Book> GetAll()
+        public IQueryable<Book> GetAll()
         {
-            return db.Books.Include(m => m.Category).ToList();
+            return db.Books.Include(m => m.Category);
         }
 
-        public IEnumerable<Book> GetAllProgrammingBooks()
+        public IQueryable<Book> GetAllProgrammingBooks()
         {
-            return db.Books.Include(m => m.Category).Where(item => item.CategoryId == 1).ToList();
+            return db.Books.Include(m => m.Category).Where(item => item.CategoryId == 1);
         }
 
-        public IEnumerable<Book> GetAllPsyhologyBooks()
+        public IQueryable<Book> GetAllPsyhologyBooks()
         {
-            return db.Books.Include(m => m.Category).Where(item => item.CategoryId == 2).ToList();
+            return db.Books.Include(m => m.Category).Where(item => item.CategoryId == 2);
         }
 
-        public IEnumerable<Book> GetAllLiteratureBooks()
+        public IQueryable<Book> GetAllLiteratureBooks()
         {
-            return db.Books.Include(m => m.Category).Where(item => item.CategoryId == 3).ToList();
+            return db.Books.Include(m => m.Category).Where(item => item.CategoryId == 3);
         }
 
         public IEnumerable<Book> GetAllInBasket()
@@ -42,9 +42,9 @@ namespace ASP.NET_Core_BookStore.Repositories
             return db.Books.Include(m => m.Category).Where(item => item.InBasket == true).ToList();
         }
 
-        public IEnumerable<Book> GetAllFavoriteBooks()
+        public IQueryable<Book> GetAllFavoriteBooks()
         {
-            return db.Books.Include(m => m.Category).Where(item => item.IsFavorite == true).ToList();
+            return db.Books.Include(m => m.Category).Where(item => item.IsFavorite == true);
         }
 
         public Book Get(int? id)

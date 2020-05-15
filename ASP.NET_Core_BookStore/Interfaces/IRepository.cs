@@ -7,7 +7,7 @@ namespace ASP.NET_Core_BookStore.Interfaces
 {
     public interface IRepository<T> where T : class
     {
-        IEnumerable<T> GetAll();
+        IQueryable<T> GetAll();
         T Get(int? id);
         void Create(T item);
         void Update(T item);

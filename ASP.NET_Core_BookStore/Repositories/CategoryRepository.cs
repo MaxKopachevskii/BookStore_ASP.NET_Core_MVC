@@ -15,9 +15,9 @@ namespace ASP.NET_Core_BookStore.Repositories
         {
             db = context;
         }
-        public IEnumerable<Category> GetAll()
+        public IQueryable<Category> GetAll()
         {
-            return db.Categories.ToList();
+            return db.Categories;
         }
 
         public Category Get(int? id)
