@@ -332,3 +332,10 @@ C:\Users\Admin\source\repos\BookStore_ASP.NET_Core_MVC\ASP.NET_Core_BookStore\ob
 C:\Users\Admin\source\repos\BookStore_ASP.NET_Core_MVC\ASP.NET_Core_BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Books\AllPsyhologyBooks.cshtml.g.cs
 C:\Users\Admin\source\repos\BookStore_ASP.NET_Core_MVC\ASP.NET_Core_BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Orders\ShowNumberOfOrder.cshtml.g.cs
 C:\Users\Admin\source\repos\BookStore_ASP.NET_Core_MVC\ASP.NET_Core_BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Books\AllFavoriteBooks.cshtml.g.cs
+C:\Users\Admin\source\repos\BookStore_ASP.NET_Core_MVC\ASP.NET_Core_BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Categories\AllCategories.cshtml.g.cs
+C:\Users\Admin\source\repos\BookStore_ASP.NET_Core_MVC\ASP.NET_Core_BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Categories\CreateCategory.cshtml.g.cs
+C:\Users\Admin\source\repos\BookStore_ASP.NET_Core_MVC\ASP.NET_Core_BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Categories\EditCategory.cshtml.g.cs
+C:\Users\Admin\source\repos\BookStore_ASP.NET_Core_MVC\ASP.NET_Core_BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Books\AllFantasticBooks.cshtml.g.cs
+C:\Users\Admin\source\repos\BookStore_ASP.NET_Core_MVC\ASP.NET_Core_BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Books\AllMedicalBooks.cshtml.g.cs
+C:\Users\Admin\source\repos\BookStore_ASP.NET_Core_MVC\ASP.NET_Core_BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Books\Contact.cshtml.g.cs
+C:\Users\Admin\source\repos\BookStore_ASP.NET_Core_MVC\ASP.NET_Core_BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Books\Delivery.cshtml.g.cs

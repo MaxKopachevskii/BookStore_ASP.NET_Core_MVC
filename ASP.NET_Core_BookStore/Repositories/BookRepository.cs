@@ -37,6 +37,16 @@ namespace ASP.NET_Core_BookStore.Repositories
             return db.Books.Include(m => m.Category).Where(item => item.CategoryId == 3);
         }
 
+        public IQueryable<Book> GetAllMedicalBooks()
+        {
+            return db.Books.Include(m => m.Category).Where(item => item.CategoryId == 7);
+        }
+
+        public IQueryable<Book> GetAllFantasticBooks()
+        {
+            return db.Books.Include(m => m.Category).Where(item => item.CategoryId == 8);
+        }
+
         public IEnumerable<Book> GetAllInBasket()
         {
             return db.Books.Include(m => m.Category).Where(item => item.InBasket == true).ToList();

@@ -40,16 +40,20 @@
 <center><h2>Добро пожаловать в "BookStore"!!!</h2></center>
 <br />
 <div class="row">
-    <div class="btn-group-vertical col-2">
-        <button type="button" class="btn btn-warning">Button1</button>
-        <button type="button" class="btn btn-dark">Button2</button>
-        <button type="button" class="btn btn-warning">Button3</button>
-        <button type="button" class="btn btn-dark">Button4</button>
-        <button type="button" class="btn btn-warning">Button5</button>
-        <button type="button" class="btn btn-dark">Button6</button>
-        <button type="button" class="btn btn-warning">Button7</button>
+    <div class="col-lg-2">
+        <a style="width:100%;" class="btn btn-dark" asp-area="" asp-controller="Books" asp-action="AllBooks">Все товары</a>
+        <a style="width:100%;" class="btn btn-warning" asp-area="" asp-controller="Books" asp-action="AllProgrammingBooks">Мир программирования</a>
+        <a style="width:100%;" class="btn btn-dark" asp-area="" asp-controller="Books" asp-action="AllPsyhologyBooks">Психология</a>
+        <a style="width:100%;" class="btn btn-warning" asp-area="" asp-controller="Books" asp-action="AllLiteratureBooks">Художественая литература</a>
+        <a style="width:100%;" class="btn btn-dark" asp-area="" asp-controller="Books" asp-action="AllMedicalBooks">Медицинская литература</a>
+        <a style="width:100%;" class="btn btn-warning" asp-area="" asp-controller="Books" asp-action="AllFantasticBooks">Фантастика</a>
+        <a style="width:100%;" class="btn btn-dark" asp-area="" asp-controller="Books" asp-action="AllFavoriteBooks">Книги для дизайнеров</a>
+        <a style="width:100%;" class="btn btn-warning" asp-area="" asp-controller="Books" asp-action="AllFavoriteBooks">Бизнес</a>
+        <a style="width:100%;" class="btn btn-dark" asp-area="" asp-controller="Books" asp-action="Contact">Контакты</a>
+        <a style="width:100%;" class="btn btn-warning" asp-area="" asp-controller="Books" asp-action="Delivery">Доставка</a>
+        <a style="width:100%;" class="btn btn-dark" asp-area="" asp-controller="Books" asp-action="Privacy">О BookStore</a>
     </div>
-    <div class="col-10">
+    <div class="col-lg-10">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>

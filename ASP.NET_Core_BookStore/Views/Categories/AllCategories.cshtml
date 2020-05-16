@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ASP.NET_Core_BookStore.Models.Category>
+
+@{
+    ViewData["Title"] = "AllCategories";
+}
+
+<br />
+<center><h4>Все категории</h4></center>
+<p>
+    <a class="btn btn-dark" asp-action="CreateCategory">Добавить</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShortDesc)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShortDesc)
+            </td>
+            <td>
+                @Html.ActionLink("Изменить", "EditCategory", new { id = item.Id }, new { @class = "btn btn-dark" }) 
+                @Html.ActionLink("Удалить", "DeleteCategory", new { id = item.Id }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

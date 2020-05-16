@@ -113,6 +113,40 @@ namespace ASP.NET_Core_BookStore.Controllers
             return View(viewModel);
         }
 
+        public async Task<IActionResult> AllMedicalBooks(int page = 1)
+        {
+            int pageSize = 6;   // количество элементов на странице
+
+            IQueryable<Book> source = unitOfWork.Books.GetAllMedicalBooks();
+            var count = await source.CountAsync();
+            var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
+
+            PageViewModel pageViewModel = new PageViewModel(count, page, pageSize);
+            IndexViewModel viewModel = new IndexViewModel
+            {
+                PageViewModel = pageViewModel,
+                Books = items
+            };
+            return View(viewModel);
+        }
+
+        public async Task<IActionResult> AllFantasticBooks(int page = 1)
+        {
+            int pageSize = 6;   // количество элементов на странице
+
+            IQueryable<Book> source = unitOfWork.Books.GetAllFantasticBooks();
+            var count = await source.CountAsync();
+            var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
+
+            PageViewModel pageViewModel = new PageViewModel(count, page, pageSize);
+            IndexViewModel viewModel = new IndexViewModel
+            {
+                PageViewModel = pageViewModel,
+                Books = items
+            };
+            return View(viewModel);
+        }
+
         public IActionResult Basket()
         {
             var books = unitOfWork.Books.GetAllInBasket();
@@ -248,6 +282,16 @@ namespace ASP.NET_Core_BookStore.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public IActionResult Contact()
+        {
+            return View();
+        }
+
+        public IActionResult Delivery()
+        {
+            return View();
         }
 
         //public IActionResult AllBooks()
