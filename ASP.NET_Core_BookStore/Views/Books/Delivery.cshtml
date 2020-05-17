@@ -2,7 +2,13 @@
 @{
     ViewData["Title"] = "Delivery";
 }
-<br />
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-area="" asp-controller="Books" asp-action="AllFavoriteBooks">Главная</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Доставка</li>
+    </ol>
+</nav>
 <h2>Доставка</h2>
 <hr />
 <pre style="font-size:1.1em;">

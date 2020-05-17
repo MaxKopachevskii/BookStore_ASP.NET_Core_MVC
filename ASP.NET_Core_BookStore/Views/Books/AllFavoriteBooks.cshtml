@@ -37,6 +37,23 @@
         <li class="breadcrumb-item active" aria-current="page">Главная</li>
     </ol>
 </nav>
+
+<div class="row">
+    <div class="col-md-12" style="float:right;">
+        <form asp-action="AllBooks">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="Search" class="form-control col-md-12" placeholder="Поиск по сайту..." />
+                <span asp-validation-for="Search" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Поиск" class="btn btn-warning col-md-12" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
 <center><h2>Добро пожаловать в "BookStore"!!!</h2></center>
 <br />
 <div class="row">
@@ -119,7 +136,7 @@
         <i class="glyphicon glyphicon-chevron-right"></i>
     </a>
 }
-
+<br />
 <h2>Информация про BookStore</h2>
 <hr />
 <pre style="font-size:1.1em;">

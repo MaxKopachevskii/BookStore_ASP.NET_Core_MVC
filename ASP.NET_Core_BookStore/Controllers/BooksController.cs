@@ -28,6 +28,42 @@ namespace ASP.NET_Core_BookStore.Controllers
             return RedirectToAction("AllFavoriteBooks");
         }
 
+        public async Task<IActionResult> AllFavoriteBooks(int page = 1)
+        {
+            int pageSize = 6;   // количество элементов на странице
+
+            IQueryable<Book> source = unitOfWork.Books.GetAllFavoriteBooks();
+            var count = await source.CountAsync();
+            var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
+
+            PageViewModel pageViewModel = new PageViewModel(count, page, pageSize);
+            IndexViewModel viewModel = new IndexViewModel
+            {
+                PageViewModel = pageViewModel,
+                Books = items
+            };
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AllBooks(string Search,int page = 1)
+        {
+            int pageSize = 6;   // количество элементов на странице
+
+            IQueryable<Book> source = unitOfWork.Books.GetAll();
+            source = source.Where(item => item.Name.Contains(Search));
+            var count = await source.CountAsync();
+            var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
+
+            PageViewModel pageViewModel = new PageViewModel(count, page, pageSize);
+            IndexViewModel viewModel = new IndexViewModel
+            {
+                PageViewModel = pageViewModel,
+                Books = items
+            };
+            return View(viewModel);
+        }
+
         public async Task<IActionResult> AllBooks(int page = 1)
         {
             int pageSize = 12;   // количество элементов на странице
@@ -96,22 +132,6 @@ namespace ASP.NET_Core_BookStore.Controllers
             return View(viewModel);
         }
 
-        public async Task<IActionResult> AllFavoriteBooks(int page = 1)
-        {
-            int pageSize = 6;   // количество элементов на странице
-
-            IQueryable<Book> source = unitOfWork.Books.GetAllFavoriteBooks();
-            var count = await source.CountAsync();
-            var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
-
-            PageViewModel pageViewModel = new PageViewModel(count, page, pageSize);
-            IndexViewModel viewModel = new IndexViewModel
-            {
-                PageViewModel = pageViewModel,
-                Books = items
-            };
-            return View(viewModel);
-        }
 
         public async Task<IActionResult> AllMedicalBooks(int page = 1)
         {
