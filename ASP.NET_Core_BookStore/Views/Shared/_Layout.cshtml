@@ -49,9 +49,12 @@
                         <li class="nav-item">
                             <a style="font-size:1.2em; font-family: 'Comic Sans MS'; color:#f61111" class="nav-link" asp-area="" asp-controller="Books" asp-action="Privacy">О нас</a>
                         </li>
-                        <li class="nav-item">
-                            <a style="font-size:1.2em; font-family: 'Comic Sans MS'; color:#ffd800" class="nav-link" asp-area="" asp-controller="Books" asp-action="AdminPanel">Панель админа</a>
-                        </li>
+                        @if (User.Identity.Name == "admin@gmail.com")
+                        {
+                            <li class="nav-item">
+                                 <a style="font-size:1.2em; font-family: 'Comic Sans MS'; color:#ffd800" class="nav-link" asp-area="" asp-controller="Books" asp-action="AdminPanel">Панель админа</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

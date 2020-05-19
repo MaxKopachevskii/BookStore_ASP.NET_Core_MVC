@@ -41,6 +41,12 @@ namespace ASP.NET_Core_BookStore
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddTransient<IUnitOfWork, EFUnitOfWork>();
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("RequireAdministratorRole",
+                     policy => policy.RequireUserName("admin@gmail.com"));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

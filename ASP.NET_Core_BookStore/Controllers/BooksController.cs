@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using ASP.NET_Core_BookStore.Models;
 using ASP.NET_Core_BookStore.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ASP.NET_Core_BookStore.Controllers
 {
@@ -173,6 +174,7 @@ namespace ASP.NET_Core_BookStore.Controllers
             return View(books);
         }
 
+        [Authorize(Policy = "RequireAdministratorRole")]
         public IActionResult AdminPanel()
         {
             var books = unitOfWork.Books.GetAll();
@@ -213,12 +215,14 @@ namespace ASP.NET_Core_BookStore.Controllers
             return NotFound();
         }
 
+        [Authorize(Policy = "RequireAdministratorRole")]
         [HttpGet]
         public IActionResult CreateBook()
         {
             return View();
         }
 
+        [Authorize(Policy = "RequireAdministratorRole")]
         [HttpPost]
         public IActionResult CreateBook(Book book)
         {
@@ -231,6 +235,7 @@ namespace ASP.NET_Core_BookStore.Controllers
             return View();
         }
 
+        [Authorize(Policy = "RequireAdministratorRole")]
         [HttpGet]
         public IActionResult EditBook(int? id)
         {
@@ -246,6 +251,7 @@ namespace ASP.NET_Core_BookStore.Controllers
             return NotFound();
         }
 
+        [Authorize(Policy = "RequireAdministratorRole")]
         [HttpPost]
         public IActionResult EditBook(Book book)
         {
@@ -272,6 +278,7 @@ namespace ASP.NET_Core_BookStore.Controllers
             return NotFound();
         }
 
+        [Authorize(Policy = "RequireAdministratorRole")]
         public IActionResult DeleteBook(int id)
         {
             unitOfWork.Books.Delete(id);

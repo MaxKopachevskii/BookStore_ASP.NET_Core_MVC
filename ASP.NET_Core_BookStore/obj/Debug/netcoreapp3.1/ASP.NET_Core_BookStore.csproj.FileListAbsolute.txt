@@ -339,3 +339,8 @@ C:\Users\Admin\source\repos\BookStore_ASP.NET_Core_MVC\ASP.NET_Core_BookStore\ob
 C:\Users\Admin\source\repos\BookStore_ASP.NET_Core_MVC\ASP.NET_Core_BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Books\AllMedicalBooks.cshtml.g.cs
 C:\Users\Admin\source\repos\BookStore_ASP.NET_Core_MVC\ASP.NET_Core_BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Books\Contact.cshtml.g.cs
 C:\Users\Admin\source\repos\BookStore_ASP.NET_Core_MVC\ASP.NET_Core_BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Books\Delivery.cshtml.g.cs
+C:\Users\Admin\source\repos\BookStore_ASP.NET_Core_MVC\ASP.NET_Core_BookStore\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
+C:\Users\Admin\source\repos\BookStore_ASP.NET_Core_MVC\ASP.NET_Core_BookStore\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
+C:\Users\Admin\source\repos\BookStore_ASP.NET_Core_MVC\ASP.NET_Core_BookStore\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
+C:\Users\Admin\source\repos\BookStore_ASP.NET_Core_MVC\ASP.NET_Core_BookStore\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\Admin\source\repos\BookStore_ASP.NET_Core_MVC\ASP.NET_Core_BookStore\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs

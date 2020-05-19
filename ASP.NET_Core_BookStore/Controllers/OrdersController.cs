@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ASP.NET_Core_BookStore.Interfaces;
 using ASP.NET_Core_BookStore.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ASP.NET_Core_BookStore.Controllers
@@ -20,6 +21,7 @@ namespace ASP.NET_Core_BookStore.Controllers
             return View();
         }
 
+        [Authorize(Policy = "RequireAdministratorRole")]
         public IActionResult GetAllOrders()
         {
             var orders = unitOfWork.Orders.GetAll();
@@ -54,6 +56,7 @@ namespace ASP.NET_Core_BookStore.Controllers
             return View();
         }
 
+        [Authorize(Policy = "RequireAdministratorRole")]
         public IActionResult DetailsOrder(int? id)
         {
             if (id == null)
@@ -68,6 +71,7 @@ namespace ASP.NET_Core_BookStore.Controllers
             return NotFound();
         }
 
+        [Authorize(Policy = "RequireAdministratorRole")]
         public IActionResult DeleteOrder(int id)
         {
             unitOfWork.Orders.Delete(id);

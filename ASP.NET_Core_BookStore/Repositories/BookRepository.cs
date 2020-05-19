@@ -39,12 +39,12 @@ namespace ASP.NET_Core_BookStore.Repositories
 
         public IQueryable<Book> GetAllMedicalBooks()
         {
-            return db.Books.Include(m => m.Category).Where(item => item.CategoryId == 7);
+            return db.Books.Include(m => m.Category).Where(item => item.CategoryId == 4);
         }
 
         public IQueryable<Book> GetAllFantasticBooks()
         {
-            return db.Books.Include(m => m.Category).Where(item => item.CategoryId == 8);
+            return db.Books.Include(m => m.Category).Where(item => item.CategoryId == 5);
         }
 
         public IEnumerable<Book> GetAllInBasket()
