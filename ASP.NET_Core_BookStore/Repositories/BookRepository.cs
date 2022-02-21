@@ -1,10 +1,8 @@
 ﻿using ASP.NET_Core_BookStore.Interfaces;
 using ASP.NET_Core_BookStore.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace ASP.NET_Core_BookStore.Repositories
 {
@@ -22,29 +20,9 @@ namespace ASP.NET_Core_BookStore.Repositories
             return db.Books.Include(m => m.Category);
         }
 
-        public IQueryable<Book> GetAllProgrammingBooks()
+        public IQueryable<Book> GetAllBooksByCategory(int categoryId)
         {
-            return db.Books.Include(m => m.Category).Where(item => item.CategoryId == 1);
-        }
-
-        public IQueryable<Book> GetAllPsyhologyBooks()
-        {
-            return db.Books.Include(m => m.Category).Where(item => item.CategoryId == 2);
-        }
-
-        public IQueryable<Book> GetAllLiteratureBooks()
-        {
-            return db.Books.Include(m => m.Category).Where(item => item.CategoryId == 3);
-        }
-
-        public IQueryable<Book> GetAllMedicalBooks()
-        {
-            return db.Books.Include(m => m.Category).Where(item => item.CategoryId == 4);
-        }
-
-        public IQueryable<Book> GetAllFantasticBooks()
-        {
-            return db.Books.Include(m => m.Category).Where(item => item.CategoryId == 5);
+            return db.Books.Include(m => m.Category).Where(item => item.CategoryId == categoryId);
         }
 
         public IEnumerable<Book> GetAllInBasket()
@@ -59,9 +37,7 @@ namespace ASP.NET_Core_BookStore.Repositories
 
         public Book Get(int? id)
         {
-            var books = db.Books.Include(m => m.Category).ToList();
-            var book = books.FirstOrDefault(item => item.Id == id);
-            return book;
+            return db.Books.Include(m => m.Category).FirstOrDefault(item => item.Id == id);
         }
 
         public void Create(Book item)

@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 
 namespace ASP.NET_Core_BookStore.Interfaces
 {
-    public interface IRepository<T> where T : class
+    public interface IRepository<T> 
+        where T : class
     {
         IQueryable<T> GetAll();
         T Get(int? id);

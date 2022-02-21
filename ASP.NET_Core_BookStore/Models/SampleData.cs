@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 
 namespace ASP.NET_Core_BookStore.Models
 {
@@ -37,6 +34,7 @@ namespace ASP.NET_Core_BookStore.Models
                     Year = 2019,
                     PublishHouse = "Питер Пресс",
                     CountInStock = 3,
+                    IsFavorite = true,
                     Category = category1
                 };
 
@@ -53,6 +51,7 @@ namespace ASP.NET_Core_BookStore.Models
                     Year = 2018,
                     PublishHouse = "Манн, Иванов и Фербер",
                     CountInStock = 4,
+                    IsFavorite = true,
                     Category = category2
                 };
 
@@ -85,6 +84,7 @@ namespace ASP.NET_Core_BookStore.Models
                     Year = 2019,
                     PublishHouse = "Питер Пресс",
                     CountInStock = 5,
+                    IsFavorite = true,
                     Category = category1
                 };
 
@@ -101,6 +101,7 @@ namespace ASP.NET_Core_BookStore.Models
                     Year = 2019,
                     PublishHouse = "Вильямс",
                     CountInStock = 3,
+                    IsFavorite = true,
                     Category = category1
                 };
 
@@ -149,6 +150,7 @@ namespace ASP.NET_Core_BookStore.Models
                     Year = 2017,
                     PublishHouse = "Диалектика",
                     CountInStock = 6,
+                    IsFavorite = true,
                     Category = category1
                 };
 
@@ -165,6 +167,7 @@ namespace ASP.NET_Core_BookStore.Models
                     Year = 2010,
                     PublishHouse = "БХВ-Петербург",
                     CountInStock = 2,
+                    IsFavorite = true,
                     Category = category1
                 };
 
@@ -181,6 +184,7 @@ namespace ASP.NET_Core_BookStore.Models
                     Year = 2019,
                     PublishHouse = "Манн, Иванов и Фербер",
                     CountInStock = 5,
+                    IsFavorite = true,
                     Category = category2
                 };
 

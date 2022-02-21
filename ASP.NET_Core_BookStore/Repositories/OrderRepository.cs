@@ -1,10 +1,7 @@
 ﻿using ASP.NET_Core_BookStore.Interfaces;
 using ASP.NET_Core_BookStore.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace ASP.NET_Core_BookStore.Repositories
 {
@@ -23,9 +20,7 @@ namespace ASP.NET_Core_BookStore.Repositories
 
         public Order Get(int? id)
         {
-            var orders = db.Orders.Include(m => m.OrderBooks).ToList();
-            var order = orders.FirstOrDefault(item => item.Id == id);
-            return order;
+            return db.Orders.Include(m => m.OrderBooks).FirstOrDefault(item => item.Id == id);
         }
 
         public void Create(Order item)

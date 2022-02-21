@@ -8509,34 +8509,34 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\maksym.kopachevskyi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\BookStore_ASP.NET_Core_MVC\\ASP.NET_Core_BookStore\\ASP.NET_Core_BookStore.csproj",
+      "projectUniqueName": "C:\\Users\\maksym.kopachevskyi\\Desktop\\Sigma\\Projects\\BookStore_ASP.NET_Core_MVC\\ASP.NET_Core_BookStore\\ASP.NET_Core_BookStore.csproj",
       "projectName": "ASP.NET_Core_BookStore",
-      "projectPath": "C:\\Users\\Admin\\source\\repos\\BookStore_ASP.NET_Core_MVC\\ASP.NET_Core_BookStore\\ASP.NET_Core_BookStore.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\source\\repos\\BookStore_ASP.NET_Core_MVC\\ASP.NET_Core_BookStore\\obj\\",
+      "projectPath": "C:\\Users\\maksym.kopachevskyi\\Desktop\\Sigma\\Projects\\BookStore_ASP.NET_Core_MVC\\ASP.NET_Core_BookStore\\ASP.NET_Core_BookStore.csproj",
+      "packagesPath": "C:\\Users\\maksym.kopachevskyi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\maksym.kopachevskyi\\Desktop\\Sigma\\Projects\\BookStore_ASP.NET_Core_MVC\\ASP.NET_Core_BookStore\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\maksym.kopachevskyi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
+        "C:\\PCI\\ConfigEngine\\.nupackages": {},
+        "C:\\PCI\\ProductCatalog\\.nupackages": {},
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://arm.seli.gic.ericsson.se/artifactory/api/nuget/proj-sdt-nddp-backup-nuget-local": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -8548,6 +8548,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
             "target": "Package",
@@ -8592,7 +8593,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

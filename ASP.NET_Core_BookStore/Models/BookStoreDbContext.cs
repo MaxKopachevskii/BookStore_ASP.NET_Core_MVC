@@ -1,9 +1,4 @@
-﻿using ASP.NET_Core_BookStore.Controllers;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace ASP.NET_Core_BookStore.Models
 {

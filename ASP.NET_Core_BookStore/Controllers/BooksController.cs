@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -17,6 +15,15 @@ namespace ASP.NET_Core_BookStore.Controllers
         private readonly ILogger<BooksController> _logger;
         IUnitOfWork unitOfWork;
 
+        enum Categories
+        {
+            Programming = 1,
+            Psyhology = 2,
+            Literature = 3,
+            Medical = 4,
+            Fantastic = 5
+        }
+
         public BooksController(ILogger<BooksController> logger, IUnitOfWork context)
         {
             _logger = logger;
@@ -25,7 +32,6 @@ namespace ASP.NET_Core_BookStore.Controllers
 
         public IActionResult Index()
         {
-            CleanBasket();
             return RedirectToAction("AllFavoriteBooks");
         }
 
@@ -47,12 +53,11 @@ namespace ASP.NET_Core_BookStore.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AllBooks(string Search,int page = 1)
+        public async Task<IActionResult> AllBooks(string search, int page = 1)
         {
             int pageSize = 6;   // количество элементов на странице
 
-            IQueryable<Book> source = unitOfWork.Books.GetAll();
-            source = source.Where(item => item.Name.Contains(Search));
+            IQueryable<Book> source = unitOfWork.Books.GetAll().Where(item => item.Name.Contains(search));
             var count = await source.CountAsync();
             var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
 
@@ -86,7 +91,7 @@ namespace ASP.NET_Core_BookStore.Controllers
         {
             int pageSize = 6;   // количество элементов на странице
 
-            IQueryable<Book> source = unitOfWork.Books.GetAllProgrammingBooks();
+            IQueryable<Book> source = unitOfWork.Books.GetAllBooksByCategory((int)Categories.Programming);
             var count = await source.CountAsync();
             var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
 
@@ -103,7 +108,7 @@ namespace ASP.NET_Core_BookStore.Controllers
         {
             int pageSize = 6;   // количество элементов на странице
 
-            IQueryable<Book> source = unitOfWork.Books.GetAllPsyhologyBooks();
+            IQueryable<Book> source = unitOfWork.Books.GetAllBooksByCategory((int)Categories.Psyhology);
             var count = await source.CountAsync();
             var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
 
@@ -120,7 +125,7 @@ namespace ASP.NET_Core_BookStore.Controllers
         {
             int pageSize = 6;   // количество элементов на странице
 
-            IQueryable<Book> source = unitOfWork.Books.GetAllLiteratureBooks();
+            IQueryable<Book> source = unitOfWork.Books.GetAllBooksByCategory((int)Categories.Literature);
             var count = await source.CountAsync();
             var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
 
@@ -138,7 +143,7 @@ namespace ASP.NET_Core_BookStore.Controllers
         {
             int pageSize = 6;   // количество элементов на странице
 
-            IQueryable<Book> source = unitOfWork.Books.GetAllMedicalBooks();
+            IQueryable<Book> source = unitOfWork.Books.GetAllBooksByCategory((int)Categories.Medical);
             var count = await source.CountAsync();
             var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
 
@@ -155,7 +160,7 @@ namespace ASP.NET_Core_BookStore.Controllers
         {
             int pageSize = 6;   // количество элементов на странице
 
-            IQueryable<Book> source = unitOfWork.Books.GetAllFantasticBooks();
+            IQueryable<Book> source = unitOfWork.Books.GetAllBooksByCategory((int)Categories.Fantastic);
             var count = await source.CountAsync();
             var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
 
@@ -291,7 +296,7 @@ namespace ASP.NET_Core_BookStore.Controllers
             var books = unitOfWork.Books.GetAll();
             foreach (var item in books)
             {
-                if (item.InBasket == true)
+                if (item.InBasket)
                 {
                     item.InBasket = false;
                     unitOfWork.Books.Update(item);
@@ -320,35 +325,5 @@ namespace ASP.NET_Core_BookStore.Controllers
         {
             return View();
         }
-
-        //public IActionResult AllBooks()
-        //{
-        //    var books = unitOfWork.Books.GetAll();
-        //    return View(books);
-        //}
-
-        //public IActionResult AllProgrammingBooks()
-        //{
-        //    var books = unitOfWork.Books.GetAllProgrammingBooks();
-        //    return View(books);
-        //}
-
-        //public IActionResult AllPsyhologyBooks()
-        //{
-        //    var books = unitOfWork.Books.GetAllPsyhologyBooks();
-        //    return View(books);
-        //}
-
-        //public IActionResult AllLiteratureBooks()
-        //{
-        //    var books = unitOfWork.Books.GetAllLiteratureBooks();
-        //    return View(books);
-        //}
-
-        //public IActionResult AllFavoriteBooks()
-        //{
-        //    var books = unitOfWork.Books.GetAllFavoriteBooks();
-        //    return View(books);
-        //}
     }
 }

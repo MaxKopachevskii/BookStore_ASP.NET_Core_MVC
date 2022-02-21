@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ASP.NET_Core_BookStore.Interfaces;
+﻿using ASP.NET_Core_BookStore.Interfaces;
 using ASP.NET_Core_BookStore.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -44,8 +40,7 @@ namespace ASP.NET_Core_BookStore.Controllers
                 unitOfWork.Save();
                 Sales();
                 CleanBasket();
-                int _orderNumber = order.Id;
-                return RedirectToAction("ShowNumberOfOrder", new { orderNumber = _orderNumber});
+                return RedirectToAction("ShowNumberOfOrder", new { orderNumber = order.Id});
             }
             return View();
         }
@@ -84,7 +79,7 @@ namespace ASP.NET_Core_BookStore.Controllers
             var books = unitOfWork.Books.GetAll();
             foreach (var item in books)
             {
-                if (item.InBasket == true)
+                if (item.InBasket)
                 {
                     item.InBasket = false;
                     unitOfWork.Books.Update(item);
@@ -98,7 +93,7 @@ namespace ASP.NET_Core_BookStore.Controllers
             var books = unitOfWork.Books.GetAll();
             foreach (var item in books)
             {
-                if (item.InBasket == true)
+                if (item.InBasket)
                 {
                     item.CountInStock--;
                     unitOfWork.Books.Update(item);

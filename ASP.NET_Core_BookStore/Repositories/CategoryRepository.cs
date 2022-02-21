@@ -1,9 +1,6 @@
 ﻿using ASP.NET_Core_BookStore.Interfaces;
 using ASP.NET_Core_BookStore.Models;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace ASP.NET_Core_BookStore.Repositories
 {
@@ -22,8 +19,7 @@ namespace ASP.NET_Core_BookStore.Repositories
 
         public Category Get(int? id)
         {
-            var category = db.Categories.Find(id);
-            return category;
+            return db.Categories.Find(id);
         }
 
         public void Create(Category item)
